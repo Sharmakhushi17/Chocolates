@@ -3,6 +3,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   margin-top: 0px;
+  text-align: center;
 }
 
 .product-container {
@@ -45,9 +46,9 @@ img:hover {
 .chocolate {
   border: 2px solid black;
   border-radius: 50px;
-  width: 20%;
   margin-top: 9%;
   background-color: white;
+  width: 20%;
   padding: 5%;
 }
 .chocolate:hover {
@@ -68,7 +69,6 @@ button {
 }
 button:hover {
   box-shadow: 2px 2px 20px grey;
-  width: 12%;
 }
 
 #name {

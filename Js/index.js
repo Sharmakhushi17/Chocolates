@@ -74,12 +74,18 @@ productArray.map((value, index) => {
   addButton.setAttribute("onclick", `fun(${index},1)`);
   addButton.innerHTML = "+";
 
+  let quan = document.createElement('input');
+  quan.setAttribute('readonly','true');
+  quan.value = 0;
+  quan.setAttribute('id' , index);
+
   let subButton = document.createElement("button");
   subButton.setAttribute("onclick", `fun(${index},-1)`);
   subButton.innerHTML = "-";
 
-  innerDiv.appendChild(productPrice);
+  div.appendChild(productPrice);
   innerDiv.appendChild(addButton);
+  innerDiv.appendChild(quan);
   innerDiv.appendChild(subButton);
 
   div.appendChild(innerDiv);
@@ -107,13 +113,17 @@ function fun(index, add) {
       delete itemsSelected[index];
     }
   } else {
-    if (add == "1") itemsSelected[index] = 1;
+    if (add == "1"){
+       itemsSelected[index] = 1;
+    }
     else {
       alert("Insufficient Item");
       return;
     }
   }
-  console.log(itemsSelected);
+
+  let quanValue = document.getElementById(index);
+  quanValue.value = parseInt(quanValue.value ) + parseInt(add);
 
   let price = productArray[index].productPrice;
   totalPrice += price * parseInt(add);
